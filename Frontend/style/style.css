@@ -10,10 +10,6 @@ body{
     border-color: rgb(83, 205, 160);
 }
 
-#login-button{
-    margin-top: 2em;
-}
-
 .btn-primary:hover{
     background-color: rgb(78, 168, 135);
     border-color: rgb(83, 205, 160);
