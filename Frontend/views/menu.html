@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap 4.3.1 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="\payroll\Frontend\style\style.css">
+    <script src="\payroll\Frontend\scripts\menu.js" defer></script>
+    <title>Payroll - Menu</title>
+</head>
+<body>
+    <!-- simple navbar with logout -->
+    <nav class="navbar navbar-expand navbar-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="#">Menu <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <!-- menu screen with title of Payroll -->
+    <div class="container mt-5">
+        <h2 style="color: rgb(83, 205, 160); margin-bottom: 20px;" class="text-center"><b>Menu</b></h2>
+
+        <!-- container with buttons to navigate payroll system -->
+        <div class="container text-center">
+            <button type="button" class="btn btn-primary menu-button">Pay History</button>
+            <button type="button" class="btn btn-primary menu-button">Logout</button>
+        </div>
+    </div>
+
+</body>
+</html>

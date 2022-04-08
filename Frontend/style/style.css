@@ -14,3 +14,7 @@ body{
     border-color: rgb(83, 205, 160);
 }
 
+.menu-button{
+    height: 100px;
+    width: 100px;
+}

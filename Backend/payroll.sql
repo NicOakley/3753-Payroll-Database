@@ -1,39 +1,23 @@
-/*
-To run this script, you will need to login to your MySQL database server.
-This script will create a login (username/pwd) and a database called "contacts" 
-with a single table called "contact", populated with 100 rows of fake data.
-
-If you have already run this script in the past and have your database already set up, 
-there's no need to run it again.
-
-Open your terminal/command window, and navigate to the mysql/bin folder, to 
-run the mysql.exe with the params " -u root -p" (password is likely "mysql" or "root"):
-
-  C:\Program Files\Ampps\mysql\bin> mysql -u root -p
-
-then, run the source file (adjusting the path as necessary):
-
-  mysql>source C:\Users\XXXX\Downloads\store.sql
-
-and you can then do something like:
-
-  mysql> SELECT * FROM customer LIMIT 10;
-
-and see 10 rows of data returned.
-*/
+-- login to MySql database server
+--   C:\Program Files\Ampps\mysql\bin> mysql -u root -p in terminal
+-- run the mysql.exe with the params " -u root -p" (password = "mysql" / "root"):
+-- run the source: mysql> source C:\"PATH TO SQL FILE"
 
 
-/*create database if it doesn't already exist*/
 CREATE DATABASE IF NOT EXISTS `payroll`;
 
-USE USER 'payroll_admin'@'localhost' IDENTIFIED BY 'payroll_pass';
+USE `payroll`;
 
-GRANT ALL PRIVILEGES ON `payroll`.* TO 'payroll_admin'@'localhost';
+CREATE USER IF NOT EXISTS 'payroll_admin'@'localhost' IDENTIFIED BY 'passw0rd';
 
+GRANT ALL ON * . * TO 'payroll_admin'@'localhost';
+
+DROP TABLE IF EXISTS `employee`;
+DROP TABLE IF EXISTS `pay`;
 DROP TABLE IF EXISTS `login`;
 
 CREATE TABLE `login` (
-    `login_id` int(11) NOT NULL AUTO_INCREMENT,
+    `id` int(11) NOT NULL AUTO_INCREMENT,
     `username` varchar(255) NOT NULL,
     `password` varchar(255) NOT NULL,
     `role` varchar(255) NOT NULL,
@@ -42,7 +26,7 @@ CREATE TABLE `login` (
 );
 
 CREATE TABLE `employee` (
-    `employee_id` int(11) NOT NULL AUTO_INCREMENT,
+    `id` int(11) NOT NULL AUTO_INCREMENT,
     `first_name` varchar(255) NOT NULL,
     `last_name` varchar(255) NOT NULL,
     `email` varchar(255) NOT NULL,
@@ -52,15 +36,17 @@ CREATE TABLE `employee` (
     `salary` int(11) NOT NULL,
     `hours` int(11) NOT NULL,
     `city` varchar(255) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`id`) REFERENCES login (`id`)
 );
 
 CREATE TABLE `pay` (
+    `id` int(11) NOT NULL,
     `pay_id` int(11) NOT NULL AUTO_INCREMENT,
     `amount` int(11) NOT NULL,
     `date` date NOT NULL,
     PRIMARY KEY (`pay_id`),
-    FOREIGN KEY (`employee_id`) REFERENCES `employee`(`employee_id`)
+    FOREIGN KEY (`id`) REFERENCES login (`id`)
 );
 
 
@@ -72,7 +58,7 @@ INSERT INTO `employee` (`id`, `first_name`, `last_name`, `email`, `phone`, `hire
 (1, 'John', 'Doe', 'aaa@bbb.ca', '111-111-1111', '2017-01-01', 'Manager', 100000, 40, 'Toronto'),
 (2, 'Walter', 'White', 'bbb@ccc.ca', '222-222-2222', '2017-01-01', 'Cook', 50000, 40, 'New Mexico');
 
-INSERT INTO `pay` (`employee_id`,`id`, `amount`, `date`) VALUES
+INSERT INTO `pay` (`id`,`pay_id`, `amount`, `date`) VALUES
 (1, 1, 100, '2017-01-01'),
 (1, 2, 200, '2017-01-08'),
 (2, 3, 300, '2017-01-01');
