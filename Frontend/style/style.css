@@ -11,7 +11,7 @@ body{
 }
 
 .btn-primary:hover{
-    background-color: red;
+    background-color: rgb(78, 168, 135);
     border-color: rgb(83, 205, 160);
 }
 
