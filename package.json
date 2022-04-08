@@ -1,0 +1,22 @@
+{
+  "name": "3753-payroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicOakley/3753-Payroll-Database.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicOakley/3753-Payroll-Database/issues"
+  },
+  "homepage": "https://github.com/NicOakley/3753-Payroll-Database#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
