@@ -8,7 +8,9 @@ body{
 .btn-primary{
     background-color: rgb(83, 205, 160);
     border-color: rgb(83, 205, 160);
+    margin-top: 1em;
 }
+
 .btn-primary:hover{
     background-color: rgb(78, 168, 135);
     border-color: rgb(83, 205, 160);
