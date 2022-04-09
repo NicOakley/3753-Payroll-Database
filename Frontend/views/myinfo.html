@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="\payroll\Frontend\style\style.css">
+    <script src="\payroll\Frontend\scripts\myinfo.js" defer></script>
+    <title>Payroll - My Information</title>
+</head>
+<body>
+    <!-- simple navbar with logout -->
+    <nav class="navbar navbar-expand navbar-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link" href="menu.html">Menu</a>
+            <a class="nav-item nav-link logout btn" type="button">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Pay history data table -->
+    <div class="container mt-5">
+        <h2 style="color: rgb(83, 205, 160); margin-bottom: 20px; margin-right:30px;" class="text-center"><b>My Information</b></h2>
+    </div>
+
+    <!-- table for pay history data -->
+    <div class="container mt-5">
+        <table class="table table-striped text-light text-center">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Hire Date</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Hours</th>
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            <tbody class="myinfo-table">
+                <!-- server fills data here -->
+            </tbody>
+        </table>
+    </div>
+</html>

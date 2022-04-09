@@ -12,9 +12,20 @@ if (mysqli_connect_errno()) {
 $action = ( array_key_exists( 'action', $_REQUEST) ? $_REQUEST['action'] : "" );
 
 if ($action === 'login') {
-    //get all fields and rows in the Contact table
     $sql_statement = "SELECT id, username, password FROM login ORDER BY id ASC;";
 
+}
+
+if ($action === 'checkIfAdmin') {
+    $sql_statement = "SELECT id FROM login WHERE role = 'admin' ORDER BY id ASC;";
+}
+
+if ($action === 'getPayHistory') {
+    $sql_statement = "SELECT * FROM pay WHERE id = " . $_GET['id']. " ORDER BY pay_id ASC;";
+}
+
+if( $action === 'getMyInfo') {
+    $sql_statement = "SELECT * FROM employee WHERE id = " . $_GET['id']. " ORDER BY id ASC;";
 }
 
 

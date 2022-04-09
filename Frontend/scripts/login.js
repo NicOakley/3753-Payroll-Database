@@ -1,4 +1,6 @@
-var session_id = null;
+if(localStorage.getItem("session_id") != undefined) {
+    window.location.href = "http://localhost/payroll/Frontend/views/menu.html";
+}
 
 
 // if enter key is pressed on username or password, login
@@ -22,10 +24,12 @@ function login() {
         $(data).each(function(key, object) {
             if(object['username'] == username && object['password'] == password) {
                 //set session id
-                session_id = object['id'];
-                console.log(session_id);
-                // navigate to menu page
-                window.location.href = "http://localhost/payroll/Frontend/views/menu.html";
+                localStorage.setItem("session_id", object['id']);
+                // navigate to menu page if session id is set
+                if(localStorage.getItem("session_id") != null) {
+                    console.log(localStorage.getItem("session_id"));
+                    window.location.href = "http://localhost/payroll/Frontend/views/menu.html";
+                }
             } else {
                 //display error message
                 $("#login-error").html("<p class='text-light'>Invalid username or password</p>");
@@ -37,9 +41,4 @@ function login() {
             }
         });
     });
-    
-
-    
 }
-
-
