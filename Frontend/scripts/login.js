@@ -28,6 +28,9 @@ function login() {
                 // navigate to menu page if session id is set
                 if(localStorage.getItem("session_id") != null) {
                     console.log(localStorage.getItem("session_id"));
+                    if(object['role'] == 'admin') {
+                        window.location.href = "http://localhost/payroll/Frontend/views/admin-menu.html";
+                    }else
                     window.location.href = "http://localhost/payroll/Frontend/views/menu.html";
                 }
             } else {

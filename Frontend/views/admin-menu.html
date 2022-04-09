@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="\payroll\Frontend\style\style.css">
-    <script src="\payroll\Frontend\scripts\menu.js" defer></script>
-    <title>Payroll - Menu</title>
+    <script src="\payroll\Frontend\scripts\adminmenu.js" defer></script>
+    <title>Payroll - Admin Panel</title>
 </head>
 <body>
     <!-- simple navbar with logout -->
@@ -29,7 +29,10 @@
             <button type="button" class="btn btn-dark menu-button logout">Logout</button>
         </div>
         <div class="container text-center" id="admin-container">
-            <!-- server fills buttons here -->
+            <h5 class="mt-4" style="color: rgb(83, 205, 160); margin-bottom: 0px; cursor:default;">Admin Panel</h5>
+            <button type="button" class="btn btn-dark menu-button allemployees">Manage Employees</button>
+            <button type="button" class="btn btn-dark menu-button allpay">Manage Pay</button>
+            <button type="button" class="btn btn-dark menu-button manageusers">Manage Users</button>
         </div>
     </div>
 

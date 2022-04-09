@@ -3,8 +3,12 @@ if(localStorage.getItem("session_id") == undefined) {
 }
 
 $(document).ready(function() {
-    console.log("dada");
     getMyInfo();
+});
+
+$(".logout").click(function(){
+    localStorage.removeItem("session_id");
+    window.location.href = "http://localhost/payroll/Frontend/views/login.html";
 });
 
 function getMyInfo() {

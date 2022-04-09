@@ -12,12 +12,11 @@ if (mysqli_connect_errno()) {
 $action = ( array_key_exists( 'action', $_REQUEST) ? $_REQUEST['action'] : "" );
 
 if ($action === 'login') {
-    $sql_statement = "SELECT id, username, password FROM login ORDER BY id ASC;";
-
+    $sql_statement = "SELECT id, username, password, role FROM login ORDER BY id ASC;";
 }
 
-if ($action === 'checkIfAdmin') {
-    $sql_statement = "SELECT id FROM login WHERE role = 'admin' ORDER BY id ASC;";
+if( $action === 'getUserRole' ) {
+    $sql_statement = "SELECT role FROM login WHERE id = " . $_GET['id']. " ORDER BY id ASC;";
 }
 
 if ($action === 'getPayHistory') {
@@ -26,6 +25,22 @@ if ($action === 'getPayHistory') {
 
 if( $action === 'getMyInfo') {
     $sql_statement = "SELECT * FROM employee WHERE id = " . $_GET['id']. " ORDER BY id ASC;";
+}
+
+if( $action === 'getAllEmployees') {
+    $sql_statement = "SELECT * FROM employee ORDER BY id ASC;";
+}
+
+if( $action === 'getAllPayHistory') {
+    $sql_statement = "SELECT * FROM pay ORDER BY pay_id ASC;";
+}
+
+if( $action === 'deleteEmployee') {
+    $sql_statement = "DELETE FROM employee WHERE id = " . $_GET['id']. " ORDER BY id ASC;";
+}
+
+if( $action === 'deletePay'){
+    $sql_statement = "DELETE FROM pay WHERE pay_id = " . $_GET['id']. " ORDER BY pay_id ASC;";
 }
 
 

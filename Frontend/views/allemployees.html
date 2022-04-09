@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="\payroll\Frontend\style\style.css">
+    <script src="\payroll\Frontend\scripts\allemployees.js" defer></script>
+    <title>Payroll - Employees</title>
+</head>
+<body>
+    <!-- simple navbar with logout -->
+    <nav class="navbar navbar-expand navbar-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link" href="admin-menu.html">Menu</a>
+            <a class="nav-item nav-link logout btn" type="button">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Pay history data table -->
+    <div class="container mt-5">
+        <h2 style="color: rgb(83, 205, 160); margin-bottom: 20px; cursor:default;" class="text-center"><b>Employees</b></h2>
+    </div>
+
+    <!-- show/hide button -->
+    <div class="container mt-5 text-center">
+        <button class="btn btn-dark show-hide-btn" type="button">Add Employee</button>
+    </div>
+
+    <!-- add employee form -->
+    <div class="container mt-1 text-light add-employee-form">
+        <form class="add-employee-form">
+            <div class="form-group">
+                <label for="employee-id">ID</label>
+                <input type="text" class="form-control" placeholder="ID">
+            </div>
+            <div class="form-group">
+                <label for="employee-name">First Name</label>
+                <input type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="employee-name">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="employee-address">Email</label>
+                <input type="text" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="employee-phone">Phone</label>
+                <input type="text" class="form-control" placeholder="Phone">
+            </div>
+            <div class="form-group">
+                <label for="employee-email">Hire Date</label>
+                <input type="text" class="form-control" placeholder="Hire Date">
+            </div>
+            <div class="form-group">
+                <label for="employee-position">Job Title</label>
+                <input type="text" class="form-control" placeholder="Job Title">
+            </div>
+            <div class="form-group">
+                <label for="employee-salary">Salary</label>
+                <input type="text" class="form-control" placeholder="Salary">
+            </div>
+            <div class="form-group">
+                <label for="employee-salary">Hours</label>
+                <input type="text" class="form-control" placeholder="Hours">
+            </div>
+            <div class="form-group">
+                <label for="employee-salary">City</label>
+                <input type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="container text-center">
+                <button class="btn btn-dark" type="button" id="add-employee-btn">Add Employee</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- table for pay history data -->
+    <div class="container mt-5">
+        <table class="table table-striped text-light text-center">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Hire Date</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Hours</th>
+                    <th scope="col">City</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="myinfo-table">
+                <!-- server fills data here -->
+            </tbody>
+        </table>
+    </div>
+</html>
