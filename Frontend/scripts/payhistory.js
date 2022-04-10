@@ -3,7 +3,6 @@ if(localStorage.getItem("session_id") == undefined) {
 }
 
 $(document).ready(function() {
-    console.log("dada");
     getPayHistory();
 });
 

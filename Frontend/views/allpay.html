@@ -24,6 +24,47 @@
         <h2 style="color: rgb(83, 205, 160); margin-bottom: 20px; margin-right:30px; cursor:default;" class="text-center"><b>All Pay History</b></h2>
     </div>
 
+    <!-- show/hide button -->
+    <div class="container mt-5 mb-4 text-center">
+        <button class="btn btn-dark show-hide-btn" type="button">Add Pay</button>
+    </div>
+
+    <!-- add pay form -->
+    <!-- pay id, amount, date -->
+    <div class="container mt-1 text-light add-employee-form text-center" style="max-width: 400px;">
+        <form class="add-employee-form" method="post" action="/Backend/addEmployee.php">
+            <div class="form-group">
+                <label for="pay-id">Pay ID</label>
+                <input id="pay_id" type="text" class="form-control" placeholder="Pay ID">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input id="amount" type="text" class="form-control" placeholder="Amount">
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input id="date" type="text" class="form-control" placeholder="Date">
+            </div>
+            <div class="container text-center">
+                <button class="btn btn-dark" type="submit" id="add-pay-btn" onclick="">Add Pay</button>
+            </div>
+        </form>
+    </div>
+
+        <!-- delete pay field -->
+        <div class="container mt-4 text-light text-center" style="max-width: 220px;">
+            <form>
+                <div class="form-group">
+                    <label>Delete Pay by ID</label>
+                    <input class="text-center form-control" id="id-input" type="text" placeholder="ID">
+                </div>
+                <div class="container text-center">
+                    <button class="btn btn-dark" type="submit" id="deleteuser-btn" onclick="deletePay()">Delete Pay</button>
+                </div>
+            </form>
+        </div>
+    
+
     <!-- table for pay history data -->
     <div class="container mt-5">
         <table class="table table-striped text-light text-center">
@@ -33,7 +74,6 @@
                     <th scope="col">Pay ID</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Date</th>
-                    <th scope="col">-</th>
                 </tr>
             </thead>
             <tbody class="allpayhistory-table">
@@ -41,4 +81,6 @@
             </tbody>
         </table>
     </div>
+
+</body>
 </html>

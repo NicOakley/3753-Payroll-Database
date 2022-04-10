@@ -10,9 +10,12 @@ $.get("http://localhost/payroll/Backend/server.php?action=getUserRole&id=" + loc
     });
 });
 
+// -------------------------------------------------
+
 $(document).ready(function() {
-    console.log("dada");
     getPayHistory();
+    $(".add-employee-form").hide();
+
 });
 
 $(".logout").click(function(){
@@ -25,21 +28,30 @@ function getPayHistory() {
         var html = "";
         $(data).each(function(key, object) {
             html +=  "<tr><td>" + object['id'] + "</td><td>" + object['pay_id'] + "</td><td>" + object['amount'] + "</td><td>"
-             + object['date'] + "</td><td><a class='btn' style='cursor:pointer;' onclick='deletePay()'>-</a></td></tr>"; 
+             + object['date'];
         });
 
         $(".allpayhistory-table").html(html);
     });
 }
 
-function deletePay() {
+// add employee form
+$(".show-hide-btn").click(function (e) {
+    e.preventDefault();
+    // if .show-hide-btn has style display-none, then show the form
+    if ($(".add-employee-form").css("display") == "none") {
+        $(".add-employee-form").show();
+        $(".show-hide-btn").text("Hide form");
+    } else {
+        $(".add-employee-form").hide();
+        $(".show-hide-btn").text("Add Employee");
+    }
+});
 
-    $.get("http://localhost/payroll/Backend/server.php?action=getAllPayHistory", function(data){
-        $(data).each(function(key, object) {
-            console.log(object['id']);
-        });
+
+function deletePay(){
+    var idToDelete = $("#id-input").val();
+    $.get("http://localhost/payroll/Backend/server.php?action=deletePay&id=" + idToDelete, function(data){
 
     });
-
-
 }

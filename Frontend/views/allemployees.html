@@ -25,12 +25,12 @@
     </div>
 
     <!-- show/hide button -->
-    <div class="container mt-5 text-center">
+    <div class="container mt-5 mb-4 text-center">
         <button class="btn btn-dark show-hide-btn" type="button">Add Employee</button>
     </div>
 
     <!-- add employee form -->
-    <div class="container mt-1 text-light add-employee-form">
+    <div class="container mt-1 text-light add-employee-form text-center" style="max-width: 400px;">
         <form class="add-employee-form" method="post" action="/Backend/addEmployee.php">
             <div class="form-group">
                 <label for="employee-first">First Name</label>
@@ -74,6 +74,18 @@
         </form>
     </div>
 
+    <!-- delete user field -->
+    <div class="container mt-4 text-light text-center" style="max-width: 220px;">
+        <form>
+            <div class="form-group">
+                <label for="search-input">Delete Employee by ID</label>
+                <input class="text-center form-control" id="id-input" type="text" placeholder="ID">
+            </div>
+            <div class="container text-center">
+                <button class="btn btn-dark" type="submit" id="deleteuser-btn" onclick="deleteEmployee()">Delete Employee</button>
+            </div>
+        </form>
+    </div>
 
 
     <!-- table for pay history data -->
@@ -91,7 +103,6 @@
                     <th scope="col">Salary</th>
                     <th scope="col">Hours</th>
                     <th scope="col">City</th>
-                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody class="myinfo-table">

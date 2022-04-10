@@ -15,7 +15,7 @@ $.get("http://localhost/payroll/Backend/server.php?action=getUserRole&id=" + loc
 
 $(document).ready(function() {
     getAllEmployees();
-    $(".add-user-form").hide();
+    $(".add-employee-form").hide();
 });
 
 function getAllEmployees() {
@@ -23,15 +23,28 @@ function getAllEmployees() {
     $.get("http://localhost/payroll/Backend/server.php?action=login", function(data){
         var html = "";
         $(data).each(function(key, object) {
-            html += "<tr><td>" + object['id'] + "</td><td>" + object['username'] + "</td>" + "<td>" + object['password'] + "</td>" + "<td>" + object['role'] + "</td>" + "<td>" + object['phone'] + "</td>"
-                    "</td><td><a style='cursor: pointer;' onclick='deleteUser()'>-</a></td>"
+            html += "<tr><td>" + object['id'] + "</td><td>" + object['username'] + "</td>" + "<td>" + object['password'] + "</td>" + "<td>" + object['role'] + "</td>";
         });
         $(".login-table").html(html);
     });
 }
 
+// add employee form
+$(".show-hide-btn").click(function (e) {
+    e.preventDefault();
+    // if .show-hide-btn has style display-none, then show the form
+    if ($(".add-employee-form").css("display") == "none") {
+        $(".add-employee-form").show();
+        $(".show-hide-btn").text("Hide form");
+    } else {
+        $(".add-employee-form").hide();
+        $(".show-hide-btn").text("Add Employee");
+    }
+});
 
 function deleteUser(){
-    $.get("http://localhost/payroll/Backend/server.php?action=deleteLogin&id=" + localStorage.getItem("session_id"), function(data){
+    var idToDelete = $("#id-input").val();
+    $.get("http://localhost/payroll/Backend/server.php?action=deleteLogin&id=" + idToDelete, function(data){
+
     });
 }
