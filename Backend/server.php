@@ -39,9 +39,14 @@ if( $action === 'deleteEmployee') {
     $sql_statement = "DELETE FROM employee WHERE id = " . $_GET['id']. " ORDER BY id ASC;";
 }
 
+if( $action === 'deleteLogin') {
+    $sql_statement = "DELETE FROM login WHERE id = " . $_GET['id']. " ORDER BY id ASC;";
+}
+
 if( $action === 'deletePay'){
     $sql_statement = "DELETE FROM pay WHERE pay_id = " . $_GET['id']. " ORDER BY pay_id ASC;";
 }
+
 
 
 //execute sql statement on the db connection, returning rows of data ($result)

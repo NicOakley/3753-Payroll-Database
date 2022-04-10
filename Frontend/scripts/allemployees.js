@@ -17,6 +17,7 @@ $(document).ready(function() {
 });
 
 function getAllEmployees() {
+    console.log("getAllEmployees");
     $.get("http://localhost/payroll/Backend/server.php?action=getAllEmployees", function(data){
         var html = "";
         $(data).each(function(key, object) {
@@ -38,8 +39,7 @@ function deleteEmployee(){
     });
 }
 
-
-// add employee code here
+// add employee form
 $(".show-hide-btn").click(function (e) {
     e.preventDefault();
     // if .show-hide-btn has style display-none, then show the form
@@ -50,5 +50,40 @@ $(".show-hide-btn").click(function (e) {
         $(".add-employee-form").hide();
         $(".show-hide-btn").text("Add Employee");
     }
+});
 
+//add employee (post)
+function addEmployee() {
+    console.log("addEmployee");
+    var first_name = $("#first_name").val();
+    var last_name = $("#last_name").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var hire_date = $("#hire_date").val();
+    var job_title = $("#job_title").val();
+    var salary = $("#salary").val();
+    var hours = $("#hours").val();
+    var city = $("#city").val();
+    var data = {
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        phone: phone,
+        hire_date: hire_date,
+        job_title: job_title,
+        salary: salary,
+        hours: hours,
+        city: city
+    };
+
+    console.log(data);
+    $.get("http://localhost/payroll/Backend/server.php?action=addEmployee", data, function(data){
+      });
+
+}
+
+$("add-employee-button").submit(function (e) { 
+    e.preventDefault();
+    addEmployee();
+    
 });

@@ -31,49 +31,45 @@
 
     <!-- add employee form -->
     <div class="container mt-1 text-light add-employee-form">
-        <form class="add-employee-form">
+        <form class="add-employee-form" method="post" action="/Backend/addEmployee.php">
             <div class="form-group">
-                <label for="employee-id">ID</label>
-                <input type="text" class="form-control" placeholder="ID">
+                <label for="employee-first">First Name</label>
+                <input id="first_name" type="text" class="form-control" placeholder="First Name">
             </div>
             <div class="form-group">
-                <label for="employee-name">First Name</label>
-                <input type="text" class="form-control" placeholder="First Name">
+                <label for="employee-last">Last Name</label>
+                <input id="last_name" type="text" class="form-control" placeholder="Last Name">
             </div>
             <div class="form-group">
-                <label for="employee-name">Last Name</label>
-                <input type="text" class="form-control" placeholder="Last Name">
-            </div>
-            <div class="form-group">
-                <label for="employee-address">Email</label>
-                <input type="text" class="form-control" placeholder="Email">
+                <label for="employee-email">Email</label>
+                <input id="email" type="text" class="form-control" placeholder="Email">
             </div>
             <div class="form-group">
                 <label for="employee-phone">Phone</label>
-                <input type="text" class="form-control" placeholder="Phone">
+                <input id="phone" type="text" class="form-control" placeholder="Phone">
             </div>
             <div class="form-group">
-                <label for="employee-email">Hire Date</label>
-                <input type="text" class="form-control" placeholder="Hire Date">
+                <label for="employee-hire">Hire Date</label>
+                <input id="hire_date" type="text" class="form-control" placeholder="Hire Date">
             </div>
             <div class="form-group">
-                <label for="employee-position">Job Title</label>
-                <input type="text" class="form-control" placeholder="Job Title">
+                <label for="employee-title">Job Title</label>
+                <input id="job_title" type="text" class="form-control" placeholder="Job Title">
             </div>
             <div class="form-group">
                 <label for="employee-salary">Salary</label>
-                <input type="text" class="form-control" placeholder="Salary">
+                <input id="salary" type="text" class="form-control" placeholder="Salary">
             </div>
             <div class="form-group">
-                <label for="employee-salary">Hours</label>
-                <input type="text" class="form-control" placeholder="Hours">
+                <label for="employee-hours">Hours</label>
+                <input id="hours" type="text" class="form-control" placeholder="Hours">
             </div>
             <div class="form-group">
-                <label for="employee-salary">City</label>
-                <input type="text" class="form-control" placeholder="City">
+                <label for="employee-city">City</label>
+                <input id="city" type="text" class="form-control" placeholder="City">
             </div>
             <div class="container text-center">
-                <button class="btn btn-dark" type="button" id="add-employee-btn">Add Employee</button>
+                <button class="btn btn-dark" type="submit" id="add-employee-btn" onclick="">Add Employee</button>
             </div>
         </form>
     </div>

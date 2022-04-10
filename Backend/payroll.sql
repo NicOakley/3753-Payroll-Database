@@ -3,7 +3,6 @@
 -- run the mysql.exe with the params " -u root -p" (password = "mysql" / "root"):
 -- run the source: mysql> source C:\"PATH TO SQL FILE"
 
-
 CREATE DATABASE IF NOT EXISTS `payroll`;
 
 USE `payroll`;
